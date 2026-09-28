@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#e2412f">
+<title>Gallery · Vidushi's Color World</title>
+<meta name="description" content="Drawings colored by visitors to Vidushi's Color World.">
+<meta property="og:title" content="Gallery · Vidushi's Color World">
+<meta property="og:image" content="box-front-v2.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' rx='8' fill='%23e91c24'/%3E%3Cpath d='M9 24V13l2-5 2 5v11zM15 24V13l2-5 2 5v11zM21 24V13l2-5 2 5v11z' fill='%23ffc20e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;700;800&display=swap">
+<style>
+:root{
+  --ground:#eaf6fc; --ground-2:#d5eef9; --card:#fff; --ink:#1d2340; --ink-soft:#4d5270; --line:#c9dfea;
+  --brand:#e2412f; --brand-dark:#b8141a;
+  --red:#e4262a; --pink:#e5178a; --yellow:#ffc20e; --green:#3dae49; --blue:#4db8ec; --ui-blue:#3b68bb; --orange:#f36f21; --dgreen:#1c7a3b;
+  --display:"Lilita One","Arial Rounded MT Bold","Trebuchet MS",sans-serif;
+  --body:"Nunito","Avenir Next","Segoe UI",system-ui,sans-serif;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-weight:600;font-size:17px;line-height:1.45;padding-inline:16px;padding-block:20px 56px;
+  background-image:linear-gradient(180deg,var(--ground-2),var(--ground) 380px);background-repeat:no-repeat}
+img{max-width:100%}
+[hidden]{display:none!important}
+button,a,label{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.page{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+
+/* header */
+.top{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.mini{display:inline-flex;flex-direction:column;align-items:center;background:var(--brand);border-radius:999px;padding:6px 22px 8px;box-shadow:0 4px 0 var(--brand-dark);text-decoration:none;line-height:.95}
+.mini b{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:.02em}
+.mini b span:nth-child(1){color:var(--yellow)}.mini b span:nth-child(2){color:#8fd14f}.mini b span:nth-child(3){color:#ff7ac0}.mini b span:nth-child(4){color:#7fb2ff}.mini b span:nth-child(5){color:var(--yellow)}.mini b span:nth-child(6){color:#8fd14f}.mini b span:nth-child(7){color:#ff7ac0}.mini b span:nth-child(8){color:#fff}.mini b span:nth-child(9){color:#ffb36b}
+.mini small{font-family:var(--display);font-size:13px;color:#fff;letter-spacing:.06em}
+.mini:focus-visible{outline:4px dashed var(--ui-blue);outline-offset:4px}
+.steps{list-style:none;margin:0;padding:10px 12px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;background:#fff;border:4px solid var(--brand);border-radius:20px;width:min(560px,100%)}
+.step{display:flex;flex-direction:column;align-items:center;gap:4px;opacity:.4}
+.step .n{width:34px;height:34px;border-radius:50%;background:var(--bg);color:var(--fg);display:grid;place-items:center;font-family:var(--display);font-size:20px;position:relative}
+.step b{font-family:var(--display);font-weight:400;font-size:12px;color:var(--bg)}
+.step.done,.step.now{opacity:1}
+.step.done .n::after{content:"";position:absolute;right:-4px;bottom:-4px;width:16px;height:16px;border-radius:50%;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 6.5' fill='none' stroke='%231c7a3b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;border:2px solid var(--dgreen)}
+.step.now .n{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--bg)}
+
+/* layout */
+.main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:760px){.main{grid-template-columns:1fr;gap:22px}}
+.card{background:var(--card);border:4px solid var(--brand);border-radius:24px;padding:18px}
+.head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.num{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-size:22px;background:var(--bg);color:var(--fg)}
+h1,h2{text-transform:uppercase;margin:0;font-family:var(--display);font-weight:400;line-height:1.02;letter-spacing:.02em;text-wrap:balance}
+h1{font-size:clamp(26px,5vw,34px);color:var(--dgreen)}
+h2{font-size:clamp(24px,4.5vw,30px);color:var(--ui-blue)}
+.sub{margin:4px 0 14px;color:var(--ink-soft);font-size:16px}
+
+/* my drawing */
+.frame{position:relative;border-radius:14px;overflow:hidden;border:3px solid var(--ink);background:#fbf6e7;cursor:zoom-in;display:block;width:100%;padding:0}
+.frame img{display:block;width:100%;height:auto;aspect-ratio:800/1333}
+.frame:focus-visible{outline:4px dashed var(--ui-blue);outline-offset:4px}
+.zoom{position:absolute;right:10px;bottom:10px;background:rgba(29,35,64,.75);color:#fff;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:800}
+.used{margin:16px 0 0;font-family:var(--display);font-size:18px;color:var(--ink);letter-spacing:.02em}
+.chips{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chip{width:100%;display:flex;align-items:center;gap:10px;border:2px solid var(--line);border-radius:14px;background:#fff;padding:7px 10px 7px 7px;font:inherit;text-align:left;cursor:pointer;color:var(--ink)}
+.chip:hover{border-color:var(--c)}
+.chip:focus-visible{outline:3px dashed var(--ui-blue);outline-offset:2px}
+.chip .dot{flex:none;width:32px;height:32px;border-radius:50%;background:var(--c);display:grid;place-items:center;box-shadow:inset 0 -3px 0 rgba(0,0,0,.14)}
+.chip .dot svg{width:13px;height:13px}
+.chip b{display:block;font-family:var(--display);font-weight:400;font-size:15px;line-height:1.05}
+.chip small{display:block;font-size:12.5px;color:var(--ink-soft);line-height:1.2}
+.chip.playing{border-color:var(--c);box-shadow:0 3px 0 var(--c)}
+
+/* upload */
+.pick{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:190px;border:3px dashed var(--ui-blue);border-radius:18px;background:#f3f8ff;cursor:pointer;text-align:center;padding:18px;color:var(--ui-blue);font-family:var(--display);font-size:22px;position:relative;overflow:hidden}
+.pick svg{width:46px;height:46px}
+.pick small{font-family:var(--body);font-size:14px;color:var(--ink-soft);font-weight:700}
+.pick:focus-within{outline:4px dashed var(--orange);outline-offset:3px}
+.pick input{position:absolute;inset:0;opacity:0;cursor:pointer;font-size:0}
+.pick.has{border-style:solid;padding:0;background:#fff;min-height:0}
+.pick.has img{display:block;width:100%;max-height:420px;object-fit:contain;background:#fff}
+.pick .change{position:absolute;right:10px;bottom:10px;background:var(--ui-blue);color:#fff;border-radius:999px;padding:4px 12px;font-family:var(--body);font-size:13px;font-weight:800}
+.field{display:flex;flex-direction:column;gap:5px;margin-top:14px}
+.field label{font-family:var(--display);font-size:17px;letter-spacing:.02em}
+.field label span{font-family:var(--body);font-size:13px;color:var(--ink-soft);font-weight:700}
+.field input,.field textarea{font:inherit;font-weight:700;font-size:16px;color:var(--ink);border:3px solid var(--line);border-radius:14px;padding:10px 12px;background:#fff;width:100%;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--ui-blue)}
+.count{align-self:flex-end;font-size:12px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.send{margin-top:16px;width:100%;font-family:var(--display);font-size:24px;letter-spacing:.03em;color:#fff;background:var(--brand);border:0;border-radius:999px;padding:12px 20px 14px;box-shadow:0 5px 0 var(--brand-dark);cursor:pointer}
+.send:active{transform:translateY(4px);box-shadow:0 1px 0 var(--brand-dark)}
+.send:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:0 5px 0 var(--brand-dark)}
+.send:focus-visible{outline:4px dashed var(--ui-blue);outline-offset:4px}
+.msg{margin:10px 0 0;font-size:15px;font-weight:800;min-height:1.2em}
+.msg.err{color:var(--brand)}
+.done-box{text-align:center;padding:10px 4px 4px}
+.done-box .big{font-family:var(--display);font-size:30px;color:var(--pink);line-height:1.05}
+.done-box p{margin:8px 0 14px;color:var(--ink-soft)}
+.again{font:inherit;font-weight:800;color:var(--ui-blue);background:none;border:0;text-decoration:underline;cursor:pointer;font-size:15px}
+
+/* gallery */
+.gallery-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.gallery-head a{font-weight:800;color:var(--ui-blue)}
+.grid{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.tile{background:#fff;border:3px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.tile button{display:block;border:0;padding:0;background:#f4f1e6;cursor:zoom-in;width:100%}
+.tile img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.tile .cap{padding:8px 10px 10px;font-size:14px;line-height:1.3}
+.tile .cap b{font-family:var(--display);font-weight:400;font-size:16px;display:block}
+.tile .cap q{color:var(--ink-soft);display:block;margin-top:2px}
+.tile.mine{border-color:var(--yellow)}
+.tile.new{border-color:var(--pink);box-shadow:0 4px 0 var(--pink)}
+.empty{color:var(--ink-soft);margin:12px 0 0}
+
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,720px);max-height:92vh}
+dialog::backdrop{background:rgba(29,35,64,.82)}
+dialog img{display:block;max-width:100%;max-height:80vh;border-radius:12px;margin:0 auto}
+dialog p{color:#fff;text-align:center;margin:10px 0 0;font-size:16px}
+dialog button{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:12px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:24px;line-height:1;cursor:pointer;font-family:var(--body);font-weight:800;color:var(--ink)}
+
+@media (max-width:760px){
+  body{font-size:16px;padding-block:14px 40px}
+  .card{padding:14px;border-radius:20px}
+  .chips{gap:6px}
+  .chip{padding:6px 8px 6px 6px;gap:8px}
+  .chip .dot{width:28px;height:28px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <a class="mini" href="/" aria-label="Back to Vidushi's Color World"><b aria-hidden="true"><span>V</span><span>I</span><span>D</span><span>U</span><span>S</span><span>H</span><span>I</span><span>'</span><span>S</span></b><small>COLOR WORLD</small></a>
+  </header>
+  <section class="card" aria-labelledby="galTitle" style="border-color:var(--yellow)">
+    <div class="gallery-head">
+      <div><h1 id="galTitle" style="color:#d99a00">The Color World gallery</h1>
+      <p class="sub" id="galSub" style="margin-bottom:0">Everyone colors differently. Here's how our visitors did it.</p></div>
+      <a href="/#upload">Add your drawing</a>
+    </div>
+    <ul class="grid" id="grid">
+    </ul>
+    <p class="empty" id="empty" hidden>No drawings yet. Be the first to add yours!</p>
+  </section>
+</div>
+
+<dialog id="lightbox" aria-label="Drawing">
+  <button type="button" id="lbClose" aria-label="Close">×</button>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+</dialog>
+
+<script>
+const $=s=>document.querySelector(s);
+const lb=$('#lightbox');
+function openLb(src,cap){ $('#lbImg').src=src; $('#lbImg').alt=cap||'Drawing'; $('#lbCap').textContent=cap||''; if(lb.showModal) lb.showModal(); }
+$('#lbClose').addEventListener('click',()=>lb.close());
+lb.addEventListener('click',e=>{ if(e.target===lb) lb.close(); });
+fetch('/api/gallery?limit=200').then(r=>r.json()).then(d=>{
+  const list=d.entries||[]; $('#empty').hidden=list.length>0;
+  $('#galSub').textContent=list.length?`${list.length} drawing${list.length===1?'':'s'} so far. Everyone colors differently!`:$('#galSub').textContent;
+  for(const en of list){
+    const li=document.createElement('li'); li.className='tile';
+    const b=document.createElement('button'); b.type='button';
+    const im=document.createElement('img'); im.loading='lazy'; im.src=en.image; im.alt=en.name?`Drawing by ${en.name}`:"A visitor's drawing";
+    b.appendChild(im); b.addEventListener('click',()=>openLb(en.image,[en.name&&`By ${en.name}`,en.note&&`“${en.note}”`].filter(Boolean).join(' · ')));
+    const cap=document.createElement('div'); cap.className='cap';
+    const nm=document.createElement('b'); nm.textContent=en.name||'A color friend'; cap.appendChild(nm);
+    if(en.note){const q=document.createElement('q'); q.textContent=en.note; cap.appendChild(q);}
+    li.append(b,cap); $('#grid').appendChild(li);
+  }
+}).catch(()=>{ $('#empty').textContent="The gallery couldn't load right now."; $('#empty').hidden=false; });
+</script>
+</body>
+</html>
